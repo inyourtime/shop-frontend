@@ -42,5 +42,5 @@ jobs:
           passphrase: ${{ secrets.SSH_PASSPHRASE }}
           # envs: IMAGE_NAME,REGISTRY,{{ secrets.DIGITALOCEAN_ACCESS_TOKEN }},GITHUB_SHA
           script: |
-            mkdir test
             echo 'test jajajaajajaja'
+            ../home/shop-fe/dev/build.sh
