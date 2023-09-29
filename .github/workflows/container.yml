@@ -28,3 +28,19 @@ jobs:
           # context: .
           push: true
           tags: inyourtime/shop-fe:dev
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: docker
+    steps:
+      - name: Deploy to Digital Ocean droplet via SSH action
+        uses: appleboy/ssh-action@v0.1.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          # passphrase: ${{ secrets.PASSPHRASE }}
+          # envs: IMAGE_NAME,REGISTRY,{{ secrets.DIGITALOCEAN_ACCESS_TOKEN }},GITHUB_SHA
+          script: |
+            mkdir test
+            echo 'test jajajaajajaja'
