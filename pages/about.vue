@@ -2,6 +2,8 @@
   <h1>About page</h1>
   <div>Count: {{ count }}</div>
   <button @click="increment">Click</button>
+  <input type="text" name="" id="">
+  <input type="text" name="" id="">
 </template>
 <script setup lang="ts">
 import { ref } from "vue"
